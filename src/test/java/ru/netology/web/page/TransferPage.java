@@ -18,14 +18,8 @@ public class TransferPage {
         sumSelector.val(String.valueOf(info2.getSumTransfer()));
         fromSelector.val(info.getCardNumber());
         buttonSelector.click();
-       return new DashboardPage();
+        return new DashboardPage();
     }
-//    public DashboardPage transfer2(DataHelper.CardInfo info, DataHelper.SumTransferInfo info2) {
-//        sumSelector.val(String.valueOf(info2.getSumTransfer1()));
-//        fromSelector.val(info.getNom1());
-//        buttonSelector.click();
-//        return new DashboardPage();
-//    }
 
 
 }

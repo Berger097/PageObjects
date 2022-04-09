@@ -6,12 +6,11 @@ import org.checkerframework.checker.units.qual.C;
 import ru.netology.web.page.DashboardPage;
 
 import java.util.Locale;
+
 @Data
 @AllArgsConstructor
 @Getter
 public class DataHelper {
-
-
 
 
     /**
@@ -50,7 +49,7 @@ public class DataHelper {
     @Getter
     @Setter
     public static class VerificationInfo {
-         String code;
+        String code;
     }
 
     public static String codeBank() {
@@ -64,32 +63,29 @@ public class DataHelper {
 
 
     /**
-     *  счета пополнения и списания
+     * счета пополнения и списания
      */
 
-//    @Data
-//    @AllArgsConstructor
-//    @NoArgsConstructor
-//    @Getter
-//    @Setter
-        @Value
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
     public static class CardInfo {
-       private String cardNumber;
+        private String cardNumber;
 
 
     }
+
     public static CardInfo getNomCard1() {
-        return new CardInfo ("5559000000000001");
+
+        return new CardInfo("5559000000000001");
     }
 
     public static CardInfo getNomCard2() {
 
-        return new CardInfo ("5559000000000002");
+        return new CardInfo("5559000000000002");
     }
-
-
-
-
 
 
     /**
@@ -105,10 +101,10 @@ public class DataHelper {
 
     }
 
-   private static int sumStr;
+    private static int sumStr;
 
 
-    public static SumTransferInfo  getSumTransferInfo() {
+    public static SumTransferInfo getSumTransferInfo() {
         SumTransferInfo s = new SumTransferInfo(sumStr);
 
         return s;
@@ -138,10 +134,7 @@ public class DataHelper {
         }
 
 
-
-
     }
-
 
 
 }
