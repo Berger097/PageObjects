@@ -103,6 +103,12 @@ public class DataHelper {
 
     private static int sumStr;
 
+    public static SumTransferInfo getSumTransferInfoStock() {
+        SumTransferInfo s = new SumTransferInfo(25000);
+
+        return s;
+    }
+
 
     public static SumTransferInfo getSumTransferInfo() {
         SumTransferInfo s = new SumTransferInfo(sumStr);
