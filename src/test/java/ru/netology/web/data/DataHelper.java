@@ -2,25 +2,17 @@ package ru.netology.web.data;
 
 import com.github.javafaker.Faker;
 import lombok.*;
-import org.checkerframework.checker.units.qual.C;
 import ru.netology.web.page.DashboardPage;
 
 import java.util.Locale;
 
-@Data
-@AllArgsConstructor
-@Getter
 public class DataHelper {
 
 
     /**
      * Данные для входа в Л/К
      */
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
+    @Value
     public static class RegistrationInfo {
         private String login;
         private String password;
@@ -43,11 +35,7 @@ public class DataHelper {
     /**
      * Код верификации
      */
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
+    @Value
     public static class VerificationInfo {
         String code;
     }
@@ -66,11 +54,7 @@ public class DataHelper {
      * счета пополнения и списания
      */
 
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
+    @Value
     public static class CardInfo {
         private String cardNumber;
 
@@ -91,38 +75,14 @@ public class DataHelper {
     /**
      * Метод генерирующий рандомное число (сумму перевода)
      */
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Getter
-    @Setter
-    public static class SumTransferInfo {
-        private int sumTransfer;
 
-    }
-
-    private static int sumStr;
-
-    public static SumTransferInfo getSumTransferInfoStock() {
-        SumTransferInfo s = new SumTransferInfo(25000);
-
-        return s;
-    }
-
-
-    public static SumTransferInfo getSumTransferInfo() {
-        SumTransferInfo s = new SumTransferInfo(sumStr);
-
-        return s;
-    }
 
     private static final Faker faker = new Faker(new Locale("en"));
 
-    public void sumRandom(String z) {
-        CardInfo s = new CardInfo(z);
+    public static int sumRandom(CardInfo z) {
         DashboardPage i = new DashboardPage();
-        int x = i.getCardBalanceRandom(s);
-
+        int x = i.getCardBalanceRandom(z);
+        int sumStr = 0;
         if (x >= 10_000) {
             sumStr = faker.number().numberBetween(1, 2000);
         } else if (x > 7000 & x < 10_000) {
@@ -140,6 +100,7 @@ public class DataHelper {
         }
 
 
+        return sumStr;
     }
 
 

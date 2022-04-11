@@ -27,15 +27,6 @@ public class DashboardPage {
     }
 
     /**
-     * Запускаем рандомайзер суммы
-     */
-    public static void sum(DataHelper.CardInfo info2) {
-        DataHelper s = new DataHelper();
-        s.sumRandom(info2.getCardNumber());
-    }
-
-
-    /**
      * выполняем нажатие на кнопку пополнения (выбираем карту которую хотим пополнить)
      */
     public TransferPage cardToTransfer(DataHelper.CardInfo info) {

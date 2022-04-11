@@ -14,8 +14,8 @@ public class TransferPage {
     private final SelenideElement buttonSelector = $x("//*[@data-test-id='action-transfer']");
 
 
-    public DashboardPage transfer(DataHelper.CardInfo info, DataHelper.SumTransferInfo info2) {
-        sumSelector.val(String.valueOf(info2.getSumTransfer()));
+    public DashboardPage transfer(DataHelper.CardInfo info, int info2) {
+        sumSelector.val(String.valueOf(info2));
         fromSelector.val(info.getCardNumber());
         buttonSelector.click();
         return new DashboardPage();
